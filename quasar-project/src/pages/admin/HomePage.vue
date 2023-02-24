@@ -191,25 +191,25 @@ export default {
       option: ref("pending"),
     };
   },
-    beforeMount() {
-    auth.onAuthStateChanged((user) => {
-      if (user) {
-        // User is signed in.
-        this.$emit()
-        console.log(user.displayName != null);
-        if (user.displayName != null) {
-          this.$router.push("/staff/home")
-        } else {
-          this.$router.push("/user/home")
-        }
+  //   beforeMount() {
+  //   auth.onAuthStateChanged((user) => {
+  //     if (user) {
+  //       // User is signed in.
+  //       this.$emit()
+  //       console.log(user.displayName != null);
+  //       if (user.displayName != null) {
+  //         this.$router.push("/staff/home")
+  //       } else {
+  //         this.$router.push("/user/home")
+  //       }
           
-      } else {
-        // No user is signed in.
-        this.$router.push("/")
-        console.log("signout");
-      }
-    });
-  }
+  //     } else {
+  //       // No user is signed in.
+  //       this.$router.push("/")
+  //       console.log("signout");
+  //     }
+  //   });
+  // }
 };
 </script>
 

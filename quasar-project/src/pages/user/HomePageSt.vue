@@ -135,14 +135,14 @@
             </q-input>
           </div>
         </div>
-        <p class="font-xsm fw-medium text-white text-start q-mt-md">Mentor</p>
+        <p class="font-xsm fw-medium text-white text-start q-mt-md">Tutor</p>
         <div class="q-mt-md">
           <q-btn-dropdown
             padding="4px 0px"
             size="14px"
             class="black-r-bg button fw-xsm text-white dept-btn"
             no-caps
-            :label="this.mentor"
+            :label="this.Tutor"
             icon=""
             dropdown-icon="none"
             ref="inputRef"
@@ -153,7 +153,7 @@
               <q-item
                 clickable
                 v-close-popup
-                @click="mentorClick"
+                @click="TutorClick"
                 class="button"
                 v-for="item in faculty_list"
                 :key="item"
@@ -166,7 +166,7 @@
           </q-btn-dropdown>
         </div>
         <p class="font-xsm fw-medium text-white text-start q-mt-md">
-          Chief Mentor
+          AC
         </p>
         <div class="q-mt-md">
           <q-btn-dropdown
@@ -174,7 +174,7 @@
             size="14px"
             class="black-r-bg button text-white dept-btn"
             no-caps
-            :label="this.chiefMentor"
+            :label="this.chiefTutor"
             icon=""
             dropdown-icon="none"
             ref="inputRef"
@@ -185,7 +185,7 @@
               <q-item
                 clickable
                 v-close-popup
-                @click="chiefMentorClick"
+                @click="chiefTutorClick"
                 class="button"
                 v-for="item in faculty_list"
                 :key="item"
@@ -239,12 +239,12 @@ export default {
       rollno: "",
       data: "",
       section: "",
-      chief_mentor: "",
+      chief_Tutor: "",
       faculty_list: [],
-      mentor: "",
-      mentorID: "",
-      chiefMentor: "",
-      chiefMentorID: "",
+      Tutor: "",
+      TutorID: "",
+      chiefTutor: "",
+      chiefTutorID: "",
       period: "",
       purpose: "",
       denied: false,
@@ -259,8 +259,8 @@ export default {
       rollno: { required },
       section: { required },
       purpose: { required },
-      mentor: { required },
-      chiefMentor: { required },
+      Tutor: { required },
+      chiefTutor: { required },
     };
   },
   setup() {
@@ -322,17 +322,17 @@ export default {
       this.period = ""
      },
       
-    mentorClick(e) {
-      this.mentor = e.target.innerHTML;
-      var result = this.faculty_list.find(item => item.name === this.mentor);
-      this.mentorID = result.id
-      console.log(this.mentorID);
+    TutorClick(e) {
+      this.Tutor = e.target.innerHTML;
+      var result = this.faculty_list.find(item => item.name === this.Tutor);
+      this.TutorID = result.id
+      console.log(this.TutorID);
     },
-    chiefMentorClick(e) {
-      this.chiefMentor = e.target.innerHTML;
-      var result = this.faculty_list.find(item => item.name === this.chiefMentor);
-      this.chiefMentorID = result.id
-      console.log(this.chiefMentorID);
+    chiefTutorClick(e) {
+      this.chiefTutor = e.target.innerHTML;
+      var result = this.faculty_list.find(item => item.name === this.chiefTutor);
+      this.chiefTutorID = result.id
+      console.log(this.chiefTutorID);
     },
     async getUserData() {
       var docRef = db.collection("students").doc(firebase.auth().currentUser.uid);
@@ -346,7 +346,7 @@ export default {
             this.name = this.data.name
             this.rollno = this.data.roll_no
             console.log(this.data);
-              this.getMentors()
+              this.getTutors()
           } else {
               // doc.data() will be undefined in this case
               console.log("No such document!");
@@ -396,8 +396,8 @@ export default {
     //     section: this.odData.section,
     //     period: this.odData.period,
     //     purpose: this.odData.purpose,
-    //     mentor: this.odData.mentor,
-    //     chief_mentor: this.odData.chief_mentor,
+    //     Tutor: this.odData.Tutor,
+    //     chief_Tutor: this.odData.chief_Tutor,
     //     status: this.odData.status,
     //   })
     //     .then((docRef) => {
@@ -439,14 +439,14 @@ export default {
       
     //   console.log("hello i ");
     // },
-    async getMentors() {
+    async getTutors() {
       this.faculty_list = []
       await db.collection("staffs").where("dept", "==", "EEE")
         .onSnapshot((querySnapshot) => {
           querySnapshot.forEach((doc) => {
-            var mentor = { id: doc.id, name: doc.data().name }
+            var Tutor = { id: doc.id, name: doc.data().name }
           
-          this.faculty_list.push(mentor);
+          this.faculty_list.push(Tutor);
           
           });
         console.log(this.faculty_list);
@@ -460,8 +460,8 @@ export default {
         section: this.section,
         period: this.period,
         purpose: this.purpose,
-        mentor: this.mentorID,
-        chief_mentor: this.chiefMentorID,
+        Tutor: this.TutorID,
+        chief_Tutor: this.chiefTutorID,
         status: 0,
       })
         .then((docRef) => {
@@ -514,27 +514,27 @@ export default {
     }
   },
 
-  beforeMount() {
-    auth.onAuthStateChanged((user) => {
-      if (user) {
-        // User is signed in.
-        console.log(user.displayName != null);
-        if (user.displayName == null) {
-          this.isThereOD(user.uid)
-          console.log("st home");
-          this.$router.push("/user/home")
+  // beforeMount() {
+  //   auth.onAuthStateChanged((user) => {
+  //     if (user) {
+  //       // User is signed in.
+  //       console.log(user.displayName != null);
+  //       if (user.displayName == null) {
+  //         this.isThereOD(user.uid)
+  //         console.log("st home");
+  //         this.$router.push("/user/home")
 
-        } else {
-          this.$router.push("/staff/home")
-        }
+  //       } else {
+  //         this.$router.push("/staff/home")
+  //       }
           
-      } else {
-        // No user is signed in.
-        this.$router.push("/")
-        console.log("signout");
-      }
-    });
-  }
+  //     } else {
+  //       // No user is signed in.
+  //       this.$router.push("/")
+  //       console.log("signout");
+  //     }
+  //   });
+  // }
 };
 </script>
 
