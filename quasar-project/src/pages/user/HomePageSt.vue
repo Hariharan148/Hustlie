@@ -489,19 +489,23 @@ export default {
       .get()
         .then((querySnapshot) => {
           if (!querySnapshot.empty) {
-            console.log("emp", querySnapshot.empty);
-            querySnapshot.forEach((doc) => {
-              this.odData = doc.data()
+            console.log("emp",querySnapshot.empty);
+          querySnapshot.forEach((doc) => {
+            this.odData = doc.data()
 
               this.odID = doc.id
               console.log(doc.id, " => ", this.odData.name);
-              this.show = false
-
-            });
-
-
-          }
-        })
+            this.show = false
+              this.
+          });
+          } else {
+              console.log("emp");
+              this.show = true
+              this.getUserData()
+          
+        }
+          
+      })
       .catch((error) => {
         console.log("Error getting documents: ", error);
         this.query = false
