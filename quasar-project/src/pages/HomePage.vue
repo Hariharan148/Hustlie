@@ -12,7 +12,7 @@
           class="fly text-white font-small"
           style="top: 19%; text-align: center"
         >
-          an initiative by team BLAZE🔥!
+          வணக்கம்!, Hello, Bonjour, Hola, Guten Tag, Здравствуйте!
         </p>
         <q-card class="my-card semidark-bg br-primary pa-interior">
           <q-card-section class="q-pa-none">

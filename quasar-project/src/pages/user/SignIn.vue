@@ -28,7 +28,7 @@
             <div class="q-px-md grey-bg input br-secondary q-pb-xl">
               <q-input
                 borderless
-                suffix="@srec.ac.in"
+                suffix="@kpriet.ac.in"
                 v-model="email"
                 autofocus
                
@@ -98,7 +98,7 @@ export default defineComponent({
       }
     },
     async sendOTP() {
-          this.email = this.email + "@srec.ac.in"
+          this.email = this.email + "@kpriet.ac.in"
       console.log(this.email);
 
       await axios

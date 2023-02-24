@@ -8,23 +8,23 @@
 import { db, auth } from "../../firestore/firestore";
 export default {
 
-  // beforeMount() {
-  //   auth.onAuthStateChanged((user) => {
-  //     if (user) {
-  //       // User is signed in.
-  //       if (user.displayName != null) {
-  //         this.$router.push("/staff/home");
-  //       } else {
-  //         this.$router.push("/user/home");
-  //       }
+  beforeMount() {
+    auth.onAuthStateChanged((user) => {
+      if (user) {
+        // User is signed in.
+        if (user.displayName != null) {
+          this.$router.push("/staff/home");
+        } else {
+          this.$router.push("/user/home");
+        }
         
-  //     } else {
-  //       // No user is signed in.
-  //       this.$router.push("/");
-  //       console.log("signout");
-  //     }
-  //   });
-  // },
+      } else {
+        // No user is signed in.
+        this.$router.push("/");
+        console.log("signout");
+      }
+    });
+  },
 };
 </script>
 

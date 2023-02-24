@@ -6,70 +6,139 @@
           <q-card class="my-card semidark-bg br-primary pa-interior">
             <q-card-section class="q-pa-none">
               <div>
-                <p v-show="this.denied" class="text-center text-red-4 font-regular q-mb-md">
+                <p
+                  v-show="this.denied"
+                  class="text-center text-red-4 font-regular q-mb-md"
+                >
                   {{ issue }}
                 </p>
               </div>
-              <p class="fw-semibold text-center text-white" style="font-size: 30px; top: -10px; position: relative">
+              <p
+                class="fw-semibold text-center text-white"
+                style="font-size: 30px; top: -10px; position: relative"
+              >
                 SIGN UP
               </p>
               <p class="font-regular grey-fg text-center q-mt-md">Name</p>
-
+              
               <div class="q-mt-md">
                 <div class="q-px-md grey-bg input br-secondary q-pb-xl">
-                  <q-input ref="inputRef" :rules="[
-                    val => val.length > 4,
-                  ]" borderless autofocus v-model="user_name" placeholder="Ex: Pawan S">
+                  <q-input
+                    ref="inputRef"
+                    :rules="[
+                        val => val.length > 4 ,
+                      ]"
+  
+                    borderless
+                    autofocus
+                    v-model="user_name"
+                    placeholder="Ex: Pawan S" 
+                    
+                  >
                   </q-input>
                 </div>
               </div>
               <div style="width: 100%; height: 100%" class="flex">
                 <div>
-                  <p class="font-regular grey-fg text-center" style="margin-top: 18px">
+                  <p
+                    class="font-regular grey-fg text-center"
+                    style="margin-top: 18px"
+                  >
                     Roll No
                   </p>
                   <div class="q-mt-md q-pr-md">
-                    <div class="q-px-md grey-bg input br-secondary q-pb-xl center">
-                      <q-input ref="inputRef" borderless v-model="roll_no" :dense="this.dense" mask="xxxxxxx" :rules="[
-                        val => val.length > 6,
-                      ]" prefix="7181" />
+                    <div
+                      class="q-px-md grey-bg input br-secondary q-pb-xl center"
+                    >
+                      <q-input
+                        ref="inputRef"
+                        borderless
+                        v-model="roll_no"
+                        :dense="this.dense"
+                        
+                        mask="xxxxxxx"
+                        :rules="[
+                            val => val.length > 6 ,
+                          ]"
+                      />
                     </div>
                   </div>
                 </div>
                 <div>
-                  <p class="font-regular grey-fg text-center" style="margin-top: 18px">
+                  <p
+                    class="font-regular grey-fg text-center"
+                    style="margin-top: 18px"
+                  >
                     Section
                   </p>
                   <div class="q-mt-md q-pr-md">
-                    <div class="q-px-md grey-bg input br-secondary q-pb-xl center">
-                      <q-input ref="inputRef" borderless v-model="section" :dense="this.dense" autofocus mask="A" />
+                    <div
+                      class="q-px-md grey-bg input br-secondary q-pb-xl center"
+                    >
+                      <q-input
+                        ref="inputRef"
+                        borderless
+                        v-model="section"
+                        :dense="this.dense"
+                        autofocus
+                        mask="A"
+                      />
                     </div>
                   </div>
                 </div>
               </div>
               <div class="flex">
                 <div class="input-2">
-                  <p class="font-regular grey-fg text-center" style="margin-top: 18px">
+                  <p
+                    class="font-regular grey-fg text-center"
+                    style="margin-top: 18px"
+                  >
                     Year
                   </p>
                   <div class="q-mt-md q-pr-md">
-                    <div class="q-px-md grey-bg input br-secondary q-pb-xl center">
-                      <q-input ref="inputRef" borderless v-model="year" :dense="this.dense" autofocus mask="#" />
+                    <div
+                      class="q-px-md grey-bg input br-secondary q-pb-xl center"
+                    >
+                      <q-input
+                        ref="inputRef"
+                        borderless
+                        v-model="year"
+                        :dense="this.dense"
+                        autofocus
+                        mask="#"
+                      />
                     </div>
                   </div>
                 </div>
 
                 <div class="input-2 q-mb-xl">
-                  <p class="font-regular grey-fg text-center" style="margin-top: 18px">
+                  <p
+                    class="font-regular grey-fg text-center"
+                    style="margin-top: 18px"
+                  >
                     Dept
                   </p>
                   <div class="q-mt-md">
-                    <q-btn-dropdown padding="6px 0px" size="16px"
-                      class="grey-bg button font-semi-medium shadow-6 dept-btn" no-caps :label="this.dept_name_item"
-                      icon="" dropdown-icon="none" ref="inputRef">
+                    <q-btn-dropdown
+                      padding="6px 0px"
+                      size="16px"
+                      class="grey-bg button font-semi-medium shadow-6 dept-btn"
+                      no-caps
+                      :label="this.dept_name_item"
+                      icon=""
+                      dropdown-icon="none"
+                      ref="inputRef"
+        
+                    >
                       <q-list separator class="br-primary">
-                        <q-item clickable v-close-popup @click="onItemClick" class="button" v-for="item in dept_list"
-                          :key="item">
+                        <q-item
+                          clickable
+                          v-close-popup
+                          @click="onItemClick"
+                          class="button"
+                          v-for="item in dept_list"
+                          :key="item"
+                        >
                           <q-item-section>
                             <q-item-label>{{ item }}</q-item-label>
                           </q-item-section>
@@ -79,30 +148,60 @@
                   </div>
                 </div>
                 <div style="width: 100%" class="q-mt-md">
-                  <p class="font-regular grey-fg text-center" style="margin-top: 18px">
+                  <p
+                    class="font-regular grey-fg text-center"
+                    style="margin-top: 18px"
+                  >
                     Email
                   </p>
                 </div>
                 <div class="q-mt-md q-pr-md">
-                  <div class="q-px-md grey-bg input br-secondary q-pb-xl center">
-                    <q-input ref="inputRef" borderless v-model="roll_no" :dense="this.dense" autofocus
-                      suffix="@srec.ac.in" />
+                  <div
+                    class="q-px-md grey-bg input br-secondary q-pb-xl center"
+                  >
+                    <q-input
+                      ref="inputRef"
+                      borderless
+                      v-model="roll_no"
+                      :dense="this.dense"
+                      autofocus
+                      suffix="@kpriet.ac.in"
+                      
+                    />
                   </div>
                 </div>
               </div>
 
               <div style="margin-top: 100px" class="q-px-lg">
-                <p class="text-red-4 q-mt-md q-mb-md text-center" style="" v-show="alert">
+                <p
+                  class="text-red-4 q-mt-md q-mb-md text-center"
+                  style=""
+                  v-show="alert"
+                >
                   *All Fields Are Required
                 </p>
-                <q-btn icon="fa-brands fa-google" padding="12px 0px" size="18px" class="bg-prime fw-bold button shadow-6"
-                  text-color="black" label="Sign up" @click="submitForm()" />
+                <q-btn
+                  icon="fa-brands fa-google"
+                  padding="12px 0px"
+                  size="18px"
+                  class="bg-prime fw-bold button shadow-6"
+                  text-color="black"
+                  label="Sign up"
+                  @click="submitForm()"
+                />
                 <p class="grey-fg text-center font-small q-mt-lg">
                   Already have an account?
                 </p>
                 <router-link to="/user/signin" style="text-decoration: none">
-                  <q-btn icon="fa-brands fa-google" padding="12px 0px" size="18px"
-                    class="grey-bg fw-bold button shadow-6 q-mt-md" text-color="black" label="Sign in" />
+                <q-btn
+                  icon="fa-brands fa-google"
+                  padding="12px 0px"
+                  size="18px"
+                  class="grey-bg fw-bold button shadow-6 q-mt-md"
+                  text-color="black"
+                  label="Sign in"
+                
+                />
                 </router-link>
               </div>
             </q-card-section>
@@ -151,7 +250,7 @@ export default defineComponent({
     return {
       v$: useVuelidate(),
       dept_name_item: "",
-      dept_list: ["CSE", "IT", "M.tech CSE", "ECE", "EEE","AIDS", "RA", "EIE", "BME", "AERO"],
+      dept_list: ["EEE", "ECE", "CSE", "CE", "CH", "AD", "BME", "MECH"],
       user_name: "",
       roll_no: "",
       year: "",
@@ -163,7 +262,7 @@ export default defineComponent({
       section: "",
       email: "",
       data: {
-        name: "", roll_no: "", section: "",
+        name: "", roll_no: "", section: "", 
         year: "", dept: "", email: "",
       },
       spam: "",
@@ -193,20 +292,20 @@ export default defineComponent({
         this.alert = true;
       } else {
         this.alert = false;
-        this.email = this.roll_no + "@srec.ac.in";
+        this.email = this.roll_no + "@kpriet.ac.in";
         this.data = {
-          name: this.user_name, roll_no: this.roll_no, section: this.section,
-          year: this.year, dept: this.dept_name_item, email: this.email,
-        }
+        name: this.user_name, roll_no: this.roll_no, section: this.section, 
+        year: this.year, dept: this.dept_name_item, email: this.email,
+      }
         this.sendOTP()
       }
     },
-    showOtp() {
+    showOtp() { 
       this.sendemail = true
       console.log("otp");
     },
     async sendOTP() {
-
+      
       console.log(this.email);
       await axios
         .post(
@@ -252,7 +351,6 @@ export default defineComponent({
   align-items: center;
   justify-content: center;
 }
-
 .my-card {
   width: 100%;
   height: 100%;
@@ -305,7 +403,6 @@ export default defineComponent({
   padding: 0px;
   min-height: 0px;
 }
-
 .q-item__label {
   height: 30px;
   padding: 6px;
