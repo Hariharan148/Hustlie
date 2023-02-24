@@ -32,7 +32,7 @@ export default {
       all: [
         {
           name: "Hariharan C",
-          rollno: "21EE038",
+          rollno: "2103238",
           period: "2nd to 3rd",
           purpose: "Lorem, ipsum dolor sit amet consectetur adipisicing elit.", 
           date: 1611653238221,
@@ -40,7 +40,7 @@ export default {
         },
         {
           name: "Pavan S",
-          rollno: "21EC078",
+          rollno: "2105178",
           period: "2nd to 3rd",
           purpose: "Placement training",
           date: 1666615858736,
@@ -48,7 +48,7 @@ export default {
         },
         {
           name: "Sanraj C",
-          rollno: "21EE038",
+          rollno: "2102138",
           period: "2nd to 3rd",
           purpose: "Placement training",
           date: 1666615858736,
@@ -56,7 +56,7 @@ export default {
         },
         {
           name: "Suraj S",
-          rollno: "21EC078",
+          rollno: "2103878",
           period: "2nd to 3rd",
           purpose: "Placement training",
           date: 1666615858736,

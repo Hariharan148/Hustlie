@@ -28,7 +28,7 @@
             <div class="q-px-md grey-bg input br-secondary q-pb-xl">
               <q-input
                 borderless
-                suffix="@kpriet.ac.in"
+                suffix="@srec.ac.in"
                 v-model="email"
                 autofocus
                

@@ -33,13 +33,10 @@
             <div class=" q-px-sm grey-bg input br-secondary q-pb-xl ">
               <q-input
                 borderless
-                suffix="@kpriet.ac.in"
+                suffix="@srec.ac.in"
                 v-model="email"
                 autofocus
-                maxlength="7"
-                :rules="[
-                  val => val.length >= 7,
-                ]"
+
               >
               </q-input>
             </div>
@@ -119,7 +116,6 @@ export default {
         required,
         minLength: minLength(4)
       },
-      email: { required, minLength: minLength(7), maxLength: maxLength(7)},
     };
   },
 
@@ -133,7 +129,7 @@ export default {
           this.issue = "All fields are required"
         } else {
           this.denied = false;
-          this.formatEmail = this.email + "@kpriet.ac.in";
+          this.formatEmail = this.email + "@srec.ac.in";
           this.emailVerify()
         }
       } else {

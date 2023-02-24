@@ -148,7 +148,7 @@ export default {
         {
           name: "Hariharan C",
           class: "EEE-A",
-          rollno: "21EE038",
+          rollno: "2105141",
           period: "2nd to 3rd",
           purpose: "Placement training",
           date: 1666615858736,
@@ -157,7 +157,7 @@ export default {
         {
           name: "Pavan S",
           class: "ECE-A",
-          rollno: "21EC078",
+          rollno: "2105157",
           period: "2nd to 3rd",
           purpose: "Placement training",
           date: 1666615858736,
@@ -166,7 +166,7 @@ export default {
         {
           name: "Sanraj C",
           class: "EEE-A",
-          rollno: "21EE038",
+          rollno: "2105167",
           period: "2nd to 3rd",
           purpose: "Placement training",
           date: 1666615858736,
@@ -175,10 +175,10 @@ export default {
         {
           name: "Suraj S",
           class: "ECE-A",
-          rollno: "21EC078",
+          rollno: "2105168",
           period: "2nd to 3rd",
           purpose: "Placement training",
-          date: 1666615858736,
+          date: 1677252918403,
           status: 0,
         },
       ],
@@ -191,25 +191,25 @@ export default {
       option: ref("pending"),
     };
   },
-    beforeMount() {
-    auth.onAuthStateChanged((user) => {
-      if (user) {
-        // User is signed in.
-        this.$emit()
-        console.log(user.displayName != null);
-        if (user.displayName != null) {
-          this.$router.push("/staff/home")
-        } else {
-          this.$router.push("/user/home")
-        }
+  //   beforeMount() {
+  //   auth.onAuthStateChanged((user) => {
+  //     if (user) {
+  //       // User is signed in.
+  //       this.$emit()
+  //       console.log(user.displayName != null);
+  //       if (user.displayName != null) {
+  //         this.$router.push("/staff/home")
+  //       } else {
+  //         this.$router.push("/user/home")
+  //       }
           
-      } else {
-        // No user is signed in.
-        this.$router.push("/")
-        console.log("signout");
-      }
-    });
-  }
+  //     } else {
+  //       // No user is signed in.
+  //       this.$router.push("/")
+  //       console.log("signout");
+  //     }
+  //   });
+  // }
 };
 </script>
 

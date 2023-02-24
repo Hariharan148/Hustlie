@@ -62,7 +62,7 @@
       </div>
       <div class="namebar" v-if="this.tab == 'home'">
         <h1 class="text-white font-xxl title-text q-mt-sm">
-          Hello, <span class="fg-prime fw-semibold" style="font-size: 15px;"> {{ name}}</span>
+          Hello, <span class="fg-prime fw-semibold" style="font-size: 25px;"> {{ name}}</span>
         </h1>
         <p class="text-white font-xsm">Have a wonderful day!</p>
       </div>
@@ -128,7 +128,7 @@ export default {
     let isActive = false;
     return {
       dense: true,
-      name: "",
+      name: "Jansi",
     };
   },
   setup() {
@@ -171,36 +171,34 @@ export default {
   // },
 
 
-      mounted() {
-    this.name = this.email
-},
-  beforeMount() {
-    auth.onAuthStateChanged((user) => {
-      if (user) {
-        // User is signed in.
+//  
+  // beforeMount() {
+  //   auth.onAuthStateChanged((user) => {
+  //     if (user) {
+  //       // User is signed in.
         
-        console.log(user);
-        // firebase.auth().updateUser()
-        if (user.displayName != null) {
-          this.user = user
-          this.email = user.displayName
-          this.name = user.displayName
-          this.to = "/staff/home"
-          this.$router.push("/staff/home");
-        } else {
-          this.email = user.email
-          this.name = user.email
-          this.to = "/user/home"
-          this.$router.push("/user/home");
-        }
+  //       console.log(user);
+  //       // firebase.auth().updateUser()
+  //       if (user.displayName != null) {
+  //         this.user = user
+  //         this.email = user.displayName
+  //         this.name = user.displayName
+  //         this.to = "/staff/home"
+  //         this.$router.push("/staff/home");
+  //       } else {
+  //         this.email = user.email
+  //         this.name = user.email
+  //         this.to = "/user/home"
+  //         this.$router.push("/user/home");
+  //       }
         
-      } else {
-        // No user is signed in.
-        this.$router.push("/");
-        console.log("signout");
-      }
-    });
-  },
+  //     } else {
+  //       // No user is signed in.
+  //       this.$router.push("/");
+  //       console.log("signout");
+  //     }
+  //   });
+  // },
 };
 </script>
 

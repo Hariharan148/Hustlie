@@ -135,7 +135,7 @@
             </q-input>
           </div>
         </div>
-        <p class="font-xsm fw-medium text-white text-start q-mt-md">Mentor</p>
+        <p class="font-xsm fw-medium text-white text-start q-mt-md">Tutor</p>
         <div class="q-mt-md">
           <q-btn-dropdown
             padding="4px 0px"
@@ -166,7 +166,7 @@
           </q-btn-dropdown>
         </div>
         <p class="font-xsm fw-medium text-white text-start q-mt-md">
-          Chief Mentor
+          Academic Coordinator
         </p>
         <div class="q-mt-md">
           <q-btn-dropdown
@@ -496,7 +496,7 @@ export default {
               this.odID = doc.id
               console.log(doc.id, " => ", this.odData.name);
             this.show = false
-              this.
+
           });
           } else {
               console.log("emp");
@@ -518,27 +518,27 @@ export default {
     }
   },
 
-  beforeMount() {
-    auth.onAuthStateChanged((user) => {
-      if (user) {
-        // User is signed in.
-        console.log(user.displayName != null);
-        if (user.displayName == null) {
-          this.isThereOD(user.uid)
-          console.log("st home");
-          this.$router.push("/user/home")
+  // beforeMount() {
+  //   auth.onAuthStateChanged((user) => {
+  //     if (user) {
+  //       // User is signed in.
+  //       console.log(user.displayName != null);
+  //       if (user.displayName == null) {
+  //         this.isThereOD(user.uid)
+  //         console.log("st home");
+  //         this.$router.push("/user/home")
 
-        } else {
-          this.$router.push("/staff/home")
-        }
+  //       } else {
+  //         this.$router.push("/staff/home")
+  //       }
           
-      } else {
-        // No user is signed in.
-        this.$router.push("/")
-        console.log("signout");
-      }
-    });
-  }
+  //     } else {
+  //       // No user is signed in.
+  //       this.$router.push("/")
+  //       console.log("signout");
+  //     }
+  //   });
+  // }
 };
 </script>
 

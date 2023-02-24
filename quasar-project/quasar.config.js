@@ -152,7 +152,7 @@ module.exports = configure(function (ctx) {
 
 
       manifest: {
-        name: `Quasar App`,
+        name: `Hustlie  `,
         short_name: `Quasar App`,
         description: `A Quasar Project`,
         display: 'standalone',

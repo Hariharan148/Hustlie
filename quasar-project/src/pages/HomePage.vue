@@ -10,9 +10,9 @@
         />
         <p
           class="fly text-white font-small"
-          style="top: 19%; text-align: center"
+          style="top: 21%; text-align: center"
         >
-          வணக்கம்!, Hello, Bonjour, Hola, Guten Tag, Здравствуйте!
+          An initiative by team Blaze🔥
         </p>
         <q-card class="my-card semidark-bg br-primary pa-interior">
           <q-card-section class="q-pa-none">

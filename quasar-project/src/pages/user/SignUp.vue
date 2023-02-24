@@ -165,7 +165,7 @@
                       v-model="roll_no"
                       :dense="this.dense"
                       autofocus
-                      suffix="@kpriet.ac.in"
+                      suffix="@srec.ac.in"
                       
                     />
                   </div>
